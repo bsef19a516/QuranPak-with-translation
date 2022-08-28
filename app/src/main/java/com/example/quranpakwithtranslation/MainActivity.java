@@ -5,6 +5,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
                 model cont = contList.get(i);
                 msg = msg +"AyahNO: "+ cont.getAyahNo() + "SurahID: " + cont.getSurahID() + "\n" + cont.getArabic() + "\n" + cont.getUrdu() + "\n" + cont.getEnglish() + "\n\n\n";
+                readTV.setTypeface(ResourcesCompat.getFont(this, R.font.noorehuda));
                 readTV.setText(msg);
             }
         }
