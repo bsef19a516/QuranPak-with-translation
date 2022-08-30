@@ -3,16 +3,22 @@ package com.example.quranpakwithtranslation;
 public class model {
     int surahID;
     int ayahNo;
+    int paraID;
     String arabic;
     String urdu;
     String english;
 
-    public model(int surahID, int ayahNo, String arabic, String urdu, String english) {
+    public int getParaID() {
+        return paraID;
+    }
+
+    public model(int surahID, int ayahNo, String arabic, String urdu, String english, int paraID) {
         this.surahID = surahID;
         this.ayahNo = ayahNo;
         this.arabic = arabic;
         this.urdu = urdu;
         this.english = english;
+        this.paraID=paraID;
     }
 
     public String getArabic() {

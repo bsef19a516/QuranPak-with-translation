@@ -30,7 +30,7 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             Cursor cursor = db.rawQuery("SELECT * FROM tayah", null);
             if (cursor != null) {
                 while (cursor.moveToNext()) {
-                    model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                    model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6), cursor.getInt(10));
                     contList.add(cont);
                 }
                 cursor.close();
@@ -38,6 +38,20 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             }
             return contList;
         }
+    public ArrayList<model> getParaData(String paraid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<model> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah Where SuraID='"+paraid+"'", null);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6), cursor.getInt(10));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
 
 
     public void CopyDataBaseFromAsset() throws IOException {
