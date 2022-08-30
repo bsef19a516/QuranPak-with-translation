@@ -41,7 +41,21 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
     public ArrayList<model> getParaData(String paraid) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<model> contList = new ArrayList<>();
-        Cursor cursor = db.rawQuery("SELECT * FROM tayah Where SuraID='"+paraid+"'", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah Where ParaID='"+paraid+"'", null);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6), cursor.getInt(10));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+    public ArrayList<model> getSurahData(String surahid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<model> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah Where SuraID='"+surahid+"'", null);
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6), cursor.getInt(10));

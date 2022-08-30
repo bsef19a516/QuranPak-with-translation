@@ -1,7 +1,7 @@
 package com.example.quranpakwithtranslation;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,10 +35,11 @@ public class ParaActivity extends AppCompatActivity {
         parahNames.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                Log.d("Position: ", String.valueOf(position));
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ParaActivity.this, ParahAyatWithTranslation.class);
+                intent.putExtra("position"  , position);
+                startActivity(intent);
+//                Log.d("Position: ", String.valueOf(position));
 
             }
 
