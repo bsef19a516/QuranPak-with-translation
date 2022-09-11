@@ -6,14 +6,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class Rv_Adapter extends RecyclerView.Adapter<Rv_Adapter.MyVH> {
 
-    List<Rv_model> friendsList;
-    public Rv_Adapter(List<Rv_model> friendsList) {
+    List<model> friendsList;
+    public Rv_Adapter(List<model> friendsList) {
         this.friendsList = friendsList;
     }
 
@@ -33,7 +34,9 @@ public class Rv_Adapter extends RecyclerView.Adapter<Rv_Adapter.MyVH> {
         holder.textViewSurahID.setText(String.valueOf(holder.data.getSurahID()));
         holder.textViewAyahNo.setText(String.valueOf(holder.data.getAyahNo()));
         holder.textViewArabic.setText(holder.data.getArabic());
-        holder.textViewTran.setText(holder.data.getTran());
+
+        holder.textViewUrduTran.setText(holder.data.getUrdu());
+        holder.textViewEngTran.setText(holder.data.getEnglish());
     }
 
     @Override
@@ -47,15 +50,19 @@ public class Rv_Adapter extends RecyclerView.Adapter<Rv_Adapter.MyVH> {
         TextView textViewSurahID;
         TextView textViewAyahNo;
         TextView textViewArabic;
-        TextView textViewTran;
-        Rv_model data;
+        TextView textViewUrduTran;
+        TextView textViewEngTran;
+        model data;
         public MyVH(@NonNull View itemView) {
             super(itemView);
             textViewParaID = itemView.findViewById(R.id.textViewParaID);
             textViewSurahID = itemView.findViewById(R.id.textViewSurahID);
             textViewAyahNo = itemView.findViewById(R.id.textViewAyahNo);
             textViewArabic = itemView.findViewById(R.id.textViewArabic);
-            textViewTran = itemView.findViewById(R.id.textViewTran);
+            textViewArabic.setTypeface(ResourcesCompat.getFont(itemView.getContext(), R.font.noorehuda));
+            textViewUrduTran = itemView.findViewById(R.id.textViewUrduTran);
+            textViewArabic.setTypeface(ResourcesCompat.getFont(itemView.getContext(), R.font.jameelnoorinastaleeq));
+            textViewEngTran = itemView.findViewById(R.id.textViewEngTran);
         }
     }
 }

@@ -7,53 +7,94 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/ParaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ParaID:"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewParaID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="28dp"
         android:text="ParaID"
         android:textColor="@color/purple_700"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/ParaID"
+        app:layout_constraintStart_toEndOf="@+id/ParaID"
+        app:layout_constraintTop_toTopOf="@+id/ParaID"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textViewSurahID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="28dp"
         android:text="SurahID"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewParaID"
-        app:layout_constraintStart_toStartOf="@+id/textViewParaID"
-        app:layout_constraintTop_toBottomOf="@+id/textViewParaID" />
+        app:layout_constraintBottom_toBottomOf="@+id/SurahID"
+        app:layout_constraintStart_toEndOf="@+id/SurahID"
+        app:layout_constraintTop_toTopOf="@+id/SurahID"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="395dp"
-        android:layout_height="3dp"
-        android:background="@android:color/holo_red_dark"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="334dp"
-        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/SurahID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="SurahID:"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/ParaID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ParaID"
+        app:layout_constraintTop_toBottomOf="@+id/ParaID" />
+
+    <TextView
+        android:id="@+id/AyahNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="AyahNo:"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/SurahID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/SurahID"
+        app:layout_constraintTop_toBottomOf="@+id/SurahID" />
 
     <TextView
         android:id="@+id/textViewAyahNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="28dp"
         android:text="AyahNo"
         android:textColor="@android:color/holo_green_dark"
         android:textColorHint="@android:color/holo_green_dark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewSurahID"
-        app:layout_constraintStart_toEndOf="@+id/textViewSurahID"
-        app:layout_constraintTop_toTopOf="@+id/textViewSurahID"
+        app:layout_constraintBottom_toBottomOf="@+id/AyahNo"
+        app:layout_constraintStart_toEndOf="@+id/AyahNo"
+        app:layout_constraintTop_toTopOf="@+id/AyahNo"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -65,22 +106,33 @@
         android:textColor="@android:color/holo_green_dark"
         android:textColorHint="@android:color/holo_green_dark"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewSurahID"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textViewSurahID"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSurahID" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAyahNo" />
 
     <TextView
-        android:id="@+id/textViewTran"
+        android:id="@+id/textViewUrduTran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="24dp"
         android:text="Translation"
         android:textColor="@android:color/holo_green_dark"
         android:textColorHint="@android:color/holo_green_dark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewArabic"
-        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="@+id/textViewArabic"
         app:layout_constraintTop_toBottomOf="@+id/textViewArabic" />
+
+    <TextView
+        android:id="@+id/textViewEngTran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Translation"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUrduTran"
+        tools:layout_editor_absoluteX="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

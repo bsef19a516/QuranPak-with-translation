@@ -5,14 +5,16 @@ public class Rv_model {
     int ayahNo;
     int paraID;
     String arabic;
-    String tran;
+    String urdu;
+    String eng;
 
-    public Rv_model(int surahID, int ayahNo, int paraID, String arabic, String tran) {
+    public Rv_model(int surahID, int ayahNo, int paraID, String arabic, String urdu, String eng) {
         this.surahID = surahID;
         this.ayahNo = ayahNo;
         this.paraID = paraID;
         this.arabic = arabic;
-        this.tran = tran;
+        this.urdu = urdu;
+        this.eng = eng;
     }
 
     public int getSurahID() {
@@ -31,8 +33,12 @@ public class Rv_model {
         return arabic;
     }
 
-    public String getTran() {
-        return tran;
+    public String getUrduTran() {
+        return urdu;
+    }
+
+    public String getEngTran() {
+        return eng;
     }
 
     public void setSurahID(int surahID) {
@@ -51,7 +57,11 @@ public class Rv_model {
         this.arabic = arabic;
     }
 
-    public void setTran(String tran) {
-        this.tran = tran;
+    public void setUrduTran(String tran) {
+        this.urdu = tran;
+    }
+
+    public void setEngTran(String tran) {
+        this.eng = tran;
     }
 }

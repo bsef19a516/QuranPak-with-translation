@@ -35,7 +35,7 @@ public class Rv_SurahActivity extends AppCompatActivity{
 
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                    Intent intent = new Intent(Rv_SurahActivity.this, SurahAyatWithTranslation.class);
+                    Intent intent = new Intent(Rv_SurahActivity.this, Rv_SurahAyatWithTranslation.class);
                     intent.putExtra("position"  , position);
                     startActivity(intent);
 //                    Log.d("Position: ", String.valueOf(position));

@@ -52,7 +52,7 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
         }
         return contList;
     }
-    public ArrayList<Rv_model> getRvParaData(String paraid) {
+    /*public ArrayList<Rv_model> getRvParaData(String paraid) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Rv_model> contList = new ArrayList<>();
         Cursor cursor = db.rawQuery("SELECT * FROM tayah Where ParaID='"+paraid+"'", null);
@@ -65,7 +65,7 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             db.close();
         }
         return contList;
-    }
+    }*/
     public ArrayList<model> getSurahData(String surahid) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<model> contList = new ArrayList<>();
