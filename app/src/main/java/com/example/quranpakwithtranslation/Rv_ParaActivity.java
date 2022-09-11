@@ -36,7 +36,7 @@ public class Rv_ParaActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Rv_ParaActivity.this, ParahAyatWithTranslation.class);
+                Intent intent = new Intent(Rv_ParaActivity.this, Rv_ParahAyatWithTranslation.class);
                 intent.putExtra("position"  , position);
                 startActivity(intent);
 //                Log.d("Position: ", String.valueOf(position));

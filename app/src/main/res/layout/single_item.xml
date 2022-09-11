@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AyahLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textViewParaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="ParaID"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSurahID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="SurahID"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewParaID"
+        app:layout_constraintStart_toStartOf="@+id/textViewParaID"
+        app:layout_constraintTop_toBottomOf="@+id/textViewParaID" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="395dp"
+        android:layout_height="3dp"
+        android:background="@android:color/holo_red_dark"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textViewAyahNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:text="AyahNo"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSurahID"
+        app:layout_constraintStart_toEndOf="@+id/textViewSurahID"
+        app:layout_constraintTop_toTopOf="@+id/textViewSurahID"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewArabic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Arabic"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSurahID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewSurahID"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSurahID" />
+
+    <TextView
+        android:id="@+id/textViewTran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Translation"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewArabic"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="@+id/textViewArabic"
+        app:layout_constraintTop_toBottomOf="@+id/textViewArabic" />
+</androidx.constraintlayout.widget.ConstraintLayout>

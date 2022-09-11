@@ -18,6 +18,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".Rv_ParahAyatWithTranslation"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".SearchAyatWithTranslation"
             android:exported="true">
         </activity>
