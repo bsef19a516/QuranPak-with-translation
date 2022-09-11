@@ -9,19 +9,18 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.islamiculoom.tasreefapp.Common.QuranData.QDH;
 
 import java.util.List;
 
 public class Rv_ParaActivity extends AppCompatActivity {
-    RecyclerView parahNames;
+    ListView parahNames;
     List<String> names;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rv_para_names);
-        parahNames=(RecyclerView) findViewById(R.id.recylerViewPara);
+        parahNames=(ListView) findViewById(R.id.rv_parah_names);
 
             QDH qdh = new QDH();
             names = qdh.GetParahNames();

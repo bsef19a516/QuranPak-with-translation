@@ -3,6 +3,7 @@ package com.example.quranpakwithtranslation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -55,13 +56,13 @@ public class Rv_Homepage extends AppCompatActivity {
             }
         });
 
-        /*buttonPara = (Button) findViewById(R.id.rv_buttonPara);
+        buttonPara = (Button) findViewById(R.id.rv_buttonPara);
         buttonSurah = (Button) findViewById(R.id.rv_buttonSurah);
         buttonPara.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Rv_Homepage.this, ParaActivity.class);
+                Intent intent = new Intent(Rv_Homepage.this, Rv_ParaActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,10 +70,10 @@ public class Rv_Homepage extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Rv_Homepage.this, SurahActivity.class);
+                Intent intent = new Intent(Rv_Homepage.this, Rv_SurahActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

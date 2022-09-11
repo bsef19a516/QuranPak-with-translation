@@ -21,12 +21,12 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/rv_buttonSurah"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/buttonSurah"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSurah"
+            app:layout_constraintStart_toStartOf="@+id/rv_buttonSurah"
+            app:layout_constraintTop_toBottomOf="@+id/rv_buttonSurah"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/buttonSurah"
+            android:id="@+id/rv_buttonSurah"
             android:layout_width="130dp"
             android:layout_height="65dp"
             android:layout_marginTop="312dp"
