@@ -3,7 +3,6 @@ package com.example.quranpakwithtranslation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -13,7 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class HomePage extends AppCompatActivity {
+public class Rv_Homepage extends AppCompatActivity {
     Button buttonPara, buttonSurah;
     NavigationView navigationView;
     public DrawerLayout drawerLayout;
@@ -21,7 +20,7 @@ public class HomePage extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.rv_homepage);
 
         // drawer layout instance to toggle the menu icon to open
         // drawer and back button to close drawer
@@ -41,12 +40,12 @@ public class HomePage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.search_button:
-                        Intent intent = new Intent(HomePage.this, Search.class);
+                        Intent intent = new Intent(Rv_Homepage.this, Search.class);
                         startActivity(intent);
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.rv_button:
-                        Intent intent2 = new Intent(HomePage.this, Rv_Homepage.class);
+                        Intent intent2 = new Intent(Rv_Homepage.this, HomePage.class);
                         startActivity(intent2);
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -56,13 +55,13 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        buttonPara = (Button) findViewById(R.id.buttonPara);
-        buttonSurah = (Button) findViewById(R.id.buttonSurah);
+        /*buttonPara = (Button) findViewById(R.id.rv_buttonPara);
+        buttonSurah = (Button) findViewById(R.id.rv_buttonSurah);
         buttonPara.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, ParaActivity.class);
+                Intent intent = new Intent(Rv_Homepage.this, ParaActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,10 +69,10 @@ public class HomePage extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, SurahActivity.class);
+                Intent intent = new Intent(Rv_Homepage.this, SurahActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.example.quranpakwithtranslation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,7 +10,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 
-public class ParahAyatWithTranslation extends AppCompatActivity {
+public class SearchAyatWithTranslation extends AppCompatActivity {
 
     TextView readTV;
     SqlLiteDbHelper dbHelper;
@@ -20,19 +19,21 @@ public class ParahAyatWithTranslation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parah_ayat_with_translation);
-
+        setContentView(R.layout.search_ayat_with_translation);
+        try {
         Intent intent=getIntent();
-        Log.d("Position: ", String.valueOf(intent.getIntExtra("position", 0)));
+        String surahNo=intent.getStringExtra("surahNo");
+        String ayatNo=intent.getStringExtra("ayatNo");
 //        readTV.setText(intent.getIntExtra("position", 0));
         // to make the Navigation drawer icon always appear on the action bar
 
         readTV = (TextView) findViewById(R.id.searchData);
         contList = new ArrayList<>();
-        contList.clear();
-        dbHelper = new SqlLiteDbHelper(ParahAyatWithTranslation.this);
+        dbHelper = new SqlLiteDbHelper(SearchAyatWithTranslation.this);
         dbHelper.openDataBase();
-        contList = dbHelper.getParaData(String.valueOf(intent.getIntExtra("position", 0)));
+
+            contList = dbHelper.getSearchData(surahNo,ayatNo);
+
         String msg ="";
         if(contList!=null) {
             for (int i = 0; i < contList.size(); i++) {
@@ -44,7 +45,12 @@ public class ParahAyatWithTranslation extends AppCompatActivity {
             }
         }
         else{
-            Toast.makeText(ParahAyatWithTranslation.this, "cant access data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SearchAyatWithTranslation.this, "cant access data", Toast.LENGTH_SHORT).show();
+        }
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(SearchAyatWithTranslation.this,"getSearchData not working", Toast.LENGTH_SHORT).show();
         }
     }
 

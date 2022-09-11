@@ -29,7 +29,7 @@ public class SurahAyatWithTranslation extends AppCompatActivity {
 //        readTV.setText(intent.getIntExtra("position", 0));
         // to make the Navigation drawer icon always appear on the action bar
 
-        readTV = (TextView) findViewById(R.id.readTV);
+        readTV = (TextView) findViewById(R.id.searchData);
         contList = new ArrayList<>();
         contList.clear();
         dbHelper = new SqlLiteDbHelper(SurahAyatWithTranslation.this);

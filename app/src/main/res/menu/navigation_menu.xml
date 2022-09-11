@@ -7,6 +7,9 @@
         <item
             android:id="@+id/search_button"
             android:title="Search" />
+        <item
+            android:id="@+id/rv_button"
+            android:title="Recyclerview" />
 
 
 </menu>

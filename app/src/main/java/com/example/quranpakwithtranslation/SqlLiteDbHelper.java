@@ -67,6 +67,21 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
         return contList;
     }
 
+    public ArrayList<model> getSearchData(String surahid, String ayatId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<model> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah Where SuraID='"+surahid+"' AND AyaNo='"+ayatId+"'", null);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                model cont = new model(cursor.getInt(1),cursor.getInt(2), cursor.getString(3), cursor.getString(5), cursor.getString(6), cursor.getInt(10));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
 
     public void CopyDataBaseFromAsset() throws IOException {
             InputStream myInput = ctx.getAssets().open(DATABASE_NAME);
